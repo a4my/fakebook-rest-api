@@ -6,6 +6,7 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 const userRoute = require('./routes/users')
 const authRoute = require('./routes/auth')
+const postRoute = require('./routes/posts')
 
 // Connecting App to Express
 const app = express()
@@ -30,6 +31,7 @@ app.use(morgan('common'))
 //Running our App
 app.use('/api/users', userRoute)
 app.use('/api/auth', authRoute)
+app.use('/api/posts', postRoute)
 
 // Express listener
 app.listen(8800, () => {
